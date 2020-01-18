@@ -5,7 +5,6 @@ MERN Login Template
 ```
 "dependencies":
 {
-
 "@sendgrid/mail": "^6.5.0",
 "cors": "^2.8.5",
 "dotenv": "^8.2.0",
@@ -19,6 +18,5 @@ MERN Login Template
 },
 "devDependencies": {
 "nodemon": "^2.0.2"
-
 }
 ```

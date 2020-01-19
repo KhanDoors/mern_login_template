@@ -55,7 +55,7 @@ userSchema.methods = {
     if (!password) return "";
     try {
       return crypto
-        .createHmac("sha256", this.salt)
+        .createHmac("sha1", this.salt)
         .update(password)
         .digest("hex");
     } catch (err) {
@@ -63,7 +63,7 @@ userSchema.methods = {
     }
   },
   makeSalt: function() {
-    return Math.round(new Date().valueOf() * Math.random());
+    return Math.round(new Date().valueOf() * Math.random()) + "";
   }
 };
 

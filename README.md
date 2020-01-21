@@ -1,6 +1,7 @@
 # mern_login_template
 
 MERN Login Template
+Backend:
 
 ```
 "dependencies":
@@ -19,4 +20,20 @@ MERN Login Template
 "devDependencies": {
 "nodemon": "^2.0.2"
 }
+```
+
+Frontend:
+
+```
+ "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "react-toastify": "^5.5.0"
+  }
 ```

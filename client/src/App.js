@@ -1,10 +1,11 @@
 import React from "react";
+import Layout from "./core/Layout";
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>React Login Template</h1>
-    </div>
+    <Layout>
+      <h1>Let's get it On!</h1>
+    </Layout>
   );
 };
 

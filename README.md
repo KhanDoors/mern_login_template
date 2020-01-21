@@ -1,8 +1,7 @@
 # mern_login_template
 
-ttttttttS
 MERN Login Template
-rrrrrrrrrrrrrr
+
 Backend:
 
 ```

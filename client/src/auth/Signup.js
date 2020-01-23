@@ -9,7 +9,7 @@ import { authenticate, isAuth } from "./helpers";
 const Signup = () => {
   const [values, setValues] = useState({
     name: "Name",
-    email: "tarzan@jungle.com",
+    email: "Email",
     password: "",
     buttonText: "Submit"
   });

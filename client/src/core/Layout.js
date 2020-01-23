@@ -13,11 +13,6 @@ const Layout = ({ children, match, history }) => {
 
   const nav = () => (
     <ul className="nav nav-tabs bg-primary">
-      <li className="nav-item">
-        <Link to="/" className="nav-link" style={isActive("/")}>
-          Home
-        </Link>
-      </li>
       {!isAuth() && (
         <Fragment>
           <li className="nav-item">
@@ -31,6 +26,14 @@ const Layout = ({ children, match, history }) => {
             </Link>
           </li>
         </Fragment>
+      )}
+
+      {isAuth() && (
+        <li className="nav-item">
+          <Link to="/" className="nav-link" style={isActive("/")}>
+            Home
+          </Link>
+        </li>
       )}
 
       {isAuth() && (

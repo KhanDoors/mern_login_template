@@ -19,7 +19,7 @@ export const removeCookie = key => {
 };
 
 //get from cookie
-export const getCookie = (key, value) => {
+export const getCookie = key => {
   if (window !== "undefined") {
     return cookie.get(key);
   }
@@ -33,7 +33,28 @@ export const setLocalStorage = (key, value) => {
 };
 
 //remove from localstorage
+export const removeLocalStorage = key => {
+  if (window !== "undefined") {
+    localStorage.removeItem(key);
+  }
+};
 
 //authenticate user from localstorage and cookie
-
+export const authenticate = (response, next) => {
+  setCookie("token", response.data.token);
+  setLocalStorage("user", response.data.user);
+  next();
+};
 //access user from localstorage
+export const isAuth = () => {
+  if (window !== "undefined") {
+    const cookieChecked = getCookie("token");
+    if (cookieChecked) {
+      if (localStorage.getItem("user")) {
+        return JSON.parse(localStorage.getItem("user"));
+      } else {
+        return false;
+      }
+    }
+  }
+};

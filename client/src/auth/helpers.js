@@ -45,6 +45,7 @@ export const authenticate = (response, next) => {
   setLocalStorage("user", response.data.user);
   next();
 };
+
 //access user from localstorage
 export const isAuth = () => {
   if (window !== "undefined") {

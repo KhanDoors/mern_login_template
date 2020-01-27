@@ -28,9 +28,11 @@ if (process.env.NODE_ENV === "development") {
 
 //import routes
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 // middleware
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 const PORT = process.env.PORT || 4000;
 

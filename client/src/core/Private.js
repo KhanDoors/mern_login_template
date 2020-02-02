@@ -53,22 +53,22 @@ const Private = ({ history }) => {
     setValues({ ...values, buttonText: "Submitting" });
     axios({
       method: "PUT",
-      url: `${process.env.REACT_APP_API}/user/profile`,
-      data: { name, email, password }
+      url: `${process.env.REACT_APP_API}/user/update`,
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      data: { name, password }
     })
       .then(response => {
         console.log(response);
         setValues({
           ...values,
-          name: "",
-          email: "",
-          password: "",
           buttonText: "Submitted"
         });
-        toast.success(response.data.message);
+        toast.success("Profile Update Successfully");
       })
       .catch(error => {
-        console.log(error.response.data);
+        console.log(error.response.data.error);
         setValues({ ...values, buttonText: "Submit" });
         toast.error(error.response.data.error);
       });

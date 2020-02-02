@@ -4,7 +4,13 @@ import Layout from "../core/Layout";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
-import { authenticate, isAuth, getCookie, signout } from "../auth/helpers";
+import {
+  authenticate,
+  isAuth,
+  getCookie,
+  signout,
+  updateUser
+} from "../auth/helpers";
 
 const Private = ({ history }) => {
   const [values, setValues] = useState({
@@ -61,11 +67,13 @@ const Private = ({ history }) => {
     })
       .then(response => {
         console.log(response);
-        setValues({
-          ...values,
-          buttonText: "Submitted"
+        updateUser(response, () => {
+          setValues({
+            ...values,
+            buttonText: "Submitted"
+          });
+          toast.success("Profile Update Successfully");
         });
-        toast.success("Profile Update Successfully");
       })
       .catch(error => {
         console.log(error.response.data.error);
@@ -129,7 +137,7 @@ const Private = ({ history }) => {
       <div className="col-md-6 offset-md-3">
         <ToastContainer />
         <h1 className="pt-5 text-center">Hello {name}</h1>
-        <p className="lead text-center">Profile Update</p>
+        <p className="lead text-center">Update your Profile</p>
         {updateForm()}
       </div>
     </Layout>

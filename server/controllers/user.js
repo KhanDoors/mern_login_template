@@ -40,15 +40,15 @@ exports.update = (req, res) => {
       }
     }
 
-    user.save((err, updateUser) => {
+    user.save((err, updatedUser) => {
       if (err) {
         return res.status(400).json({
           error: "Update failed"
         });
       }
-      updateUser.hashed_password = undefined;
-      updateUser.salt = undefined;
-      res.json(updateUser);
+      updatedUser.hashed_password = undefined;
+      updatedUser.salt = undefined;
+      res.json(updatedUser);
     });
   });
 };

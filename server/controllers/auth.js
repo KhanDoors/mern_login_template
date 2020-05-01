@@ -78,7 +78,7 @@ exports.accountActivation = (req, res) => {
     });
   } else {
     return res.json({
-      message: "Something went wrong. Try again."
+      message: "Something went wrong. 🤣 Try again."
     });
   }
 };
